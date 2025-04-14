@@ -1,0 +1,7 @@
+variable;definition;unit;type;levels;comment
+species;abbrevation of the botanical name of each species;NA;character;NA;
+01_A1y21;abundance of species in the plot 01_A1y21 after Londo (1976);percent;numeric;NA;"Londo scale transformed to percentage scale via Traxler (1997) Table 23 columne ""mit.D"" / Londo G (1976): The decimal scale for releves of permanent quadrats. Vegetatio 33, (61-64) / Traxler A (1997): Handbuch des vegetationsökologischen Monitorings. Umweltbundesamt Wien"
+etc.;;;;;
+;;;;;
+;;;;;
+;;;;;

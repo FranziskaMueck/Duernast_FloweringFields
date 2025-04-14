@@ -1,0 +1,14 @@
+variable;definition;unit;type;value;comment
+nr;continous number given each plot to generate nummeric code (if necessary);NA;numeric;NA;hasn't been used in the final version
+code;unique plot ID consisting of all important information (plot numeric ID, seed mixture ID, seeding density, sampling period);NA;factor;NA;
+sampling_period;Time frame when data was sampled, ranging from june (early) 2021 to August (late) 2024;NA;factor;EarlySummer21 = first sampling in june/july, LateSummer2021 = second sampling in Auguts/September, EarlySummer24 = third sampling in june/july, LateSummer2024 = fourth sampling in Auguts/September;
+sampling_year;year of vegetation surveys;NA;numeric;2021, 2024;
+seedMixture;abbrevation of sown seed mixture;NA;factor;L.nr=low diversity, non regional seeds/ M.nr=moderate diversity, non regional seeds/ M.r=moderate diversity, regional seeds/ I.nr=interemediate diversity, non regional seeds/ H.r=hig diversity, regional seeds;
+number_seed_mixture;numeric abbrevation of sown seed mixture;NA;numeric;1=L.nr, 2=M.nr, 3=M.r, 4=I.nr, 5=H.r;made to surely differentiate NMDS results, since NMDS can only run with numeric values
+year_mix_group;numeric abbrevation of sown seed mixture, differentiated by years;NA;numeric;1=L.nr 2021, 2=M.nr 2021, 3=M.r 2021, 4=I.nr 2021, 5=H.r 2021, 6=L.nr 2024, 7=M.nr 2024, 8=M.r 2024, 9=I.nr 2024, 10=H.r 2024;made to create clearly defined hulls for the NMDS
+seedDensity;sown seed density;NA;factor;1=50%, 2=100%, 3=200%;
+replication;replication combination of two treatments (seedMixture and SeedDensity);NA;factor;NA;
+id;PlotID, no differentiation between years;NA;factor;NA;hasn't been used in the final version
+DensityBlock;BlockID of one seed mixture and all tree seed densities sown in one row;NA;factor;NA;
+GrownBlock;BlockID of adjacent plots with no distance between;NA;factor;NA;
+spec_nr;total number of observed species in the wohle sampling year;NA;numeric;NA;
