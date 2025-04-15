@@ -12,9 +12,7 @@ Data and code for:
         Raw data of the sites variables, species abundances specifically for NMDS code (.csv)
     Outputs: the folder outputs contains
         The figures generated (.jpg)
-        The models calculated (.Rdata)
         The summary statistics of the models (.csv)
-        the tables generated (.png)
     R: the folder R contains
         Script to calculate all models for species richness and biomass (.R)
         Script to generate NMDS (.R)
