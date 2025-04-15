@@ -162,35 +162,35 @@ diversity<-grid.arrange(species, est, weed)
 ggsave("glm_diversity2021_corrected_all.jpg",plot=diversity,width=10, height=9,dpi=300, path = "Y:/Dürnast_Blühstreifen/Veröffentlichung/Graphen")
 
 
-#### - plant biomass 2021 - ####
+#### - plant biomass converted to gram per square meter 2021 - ####
 ## normality ##
 
-shapiro.test(aby$biomass) #distribution? -> NOT normal
-hist(aby$biomass)
+shapiro.test(aby$biomass_qm) #distribution? -> NOT normal
+hist(aby$biomass_qm)
 #data transformation
-shapiro.test(log(aby$biomass+1)) # normal distribution
-hist(log(aby$biomass+1)) 
+shapiro.test(log(aby$biomass_qm+1)) # normal distribution
+hist(log(aby$biomass_qm+1)) 
 
 ## generalized linear mixed models (glmm) ##
 # transformed data
-glm.bm <- glmmTMB(log(biomass+1)~seedDensity*seedMixture+(1|replication)+(1|DensityBlock)+(1|GrownBlock),
-                   family = gaussian(link = "identity"), data = aby)
+glm.bm2 <- glmmTMB(log(biomass_qm+1)~seedDensity*seedMixture+(1|replication)+(1|DensityBlock)+(1|GrownBlock),
+                  family = gaussian(link = "identity"), data = aby)
 
 # Anova
-Anova(glm.bm)
+Anova(glm.bm2)
 
 #post-hoc for single significant variable (seed mixture)
-summary(pairs(emmeans(glm.bm, "seedMixture")), adjust = "tukey")
+summary(pairs(emmeans(glm.bm2, "seedMixture")), adjust = "tukey")
 
 # compare seed density within seed mixture - biomass
-emmbm <- emmeans(glm.bm, specs = pairwise ~ seedDensity | seedMixture, type = "response", adjust = "tukey")
-emmbm <- emmbm$contrasts %>%
+emmbm2 <- emmeans(glm.bm2, specs = pairwise ~ seedDensity | seedMixture, type = "response", adjust = "tukey")
+emmbm2 <- emmbm2$contrasts %>%
   rbind(adjust = "tukey")
-summary(emmbm, infer = T)
+summary(emmbm2, infer = T)
 
 
-### - Create Graph for plant biomass - ###
-biomass<-ggplot(data=aby,aes(x=seedMixture,y=biomass,fill=seedDensity))+
+### - Create Graph for plant biomass per sqare meter - ###
+biomass<-ggplot(data=aby,aes(x=seedMixture,y=biomass_qm,fill=seedDensity))+
   geom_boxplot()+
   scale_fill_manual(name="Seed density", values=c("grey80","grey50","grey20"),
                     breaks=c("1","2","3"),
@@ -198,12 +198,12 @@ biomass<-ggplot(data=aby,aes(x=seedMixture,y=biomass,fill=seedDensity))+
   ylab("Dried biomass (g)")+
   xlab("Seed mixture")+
   geom_point(position = position_dodge(width = 0.9), colour = "black", alpha = 0.5)+
-  annotate("text", x = 1:5, y = 250, label = c("ab","b","a","b","b"),size=5)+
+  annotate("text", x = 1:5, y = 2000, label = c("ab","b","a","b","b"),size=5)+
   theme_classic(base_size = 15)+
   theme(axis.text.y=element_text(size=15),axis.text.x=element_text(size=15))
 
 biomass
-ggsave("glm_biomass.jpg",plot=biomass,width=10,height=5,dpi=300, path = "Y:/Dürnast_Blühstreifen/Veröffentlichung/Graphen")
+ggsave("glm_biomass_qm.jpg",plot=biomass,width=10,height=5,dpi=300, path = "Y:/Dürnast_Blühstreifen/Veröffentlichung/Graphen")
 
 #### - model pollinated plants and grasses - ####
 ## normality ##
