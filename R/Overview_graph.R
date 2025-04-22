@@ -9,7 +9,7 @@ library(ggplot2)
 
 # ----- Data 2021 (No May) ----- #
 
-summary.all20<-read.csv2("Y:/Dürnast_Blühstreifen/Veröffentlichung/RCodes/summary_2021_NoMay.csv")
+summary.all20<-read.csv2("Y:/Dürnast_Blühstreifen/Veröffentlichung/RCodes/data_processed_summary_2021_NoMay.csv")
 summary.all20$seed_mixture<-factor(summary.all20$seed_mixture,levels=c("L.nr","M.nr","M.r","I.nr","H.r","weed")) # sort x-axis
 summaryall20<-summary.all20[1:5,] # only use 5 seed mixtures
 
@@ -44,7 +44,7 @@ ggsave("Fig1a_Barplot2021.jpg",plot=allstackall20,width=7,height=5,dpi=300, path
 
 # ----- Data 2024 (June & August) ----- #
 
-summary.all24<-read.csv2("Y:/Dürnast_Blühstreifen/Veröffentlichung/RCodes/summary_2024_final.csv")
+summary.all24<-read.csv2("Y:/Dürnast_Blühstreifen/Veröffentlichung/RCodes/data_processed_summary_2024.csv")
 summary.all24$seed_mixture<-factor(summary.all24$seed_mixture,levels=c("L.nr","M.nr","M.r","I.nr","H.r","weed")) # sort x-axis
 summaryall24<-summary.all24[1:5,] # only use 5 seed mixtures
 
