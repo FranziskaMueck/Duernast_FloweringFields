@@ -528,7 +528,6 @@ grassespoll24<-grid.arrange(pollpla24, grass24)
 ggsave("glm_pollgrasses24.jpg",plot=grassespoll24,width=10,height=7,dpi=300, path = "Y:/Dürnast_Blühstreifen/Veröffentlichung/Graphen")
 
 
-
 ##### Moran's I analysis #####
 
 library(sf)    # for importing Shape files
@@ -608,39 +607,3 @@ MC.snr24<- moran.mc(shp.file$F24all_spe, lw, nsim=999, alternative="greater")
 MC.snr24
 
 plot(MC.snr24, xlab = "Moran's I") 
-
-#### - Moran's I analysis as a function of distance band - ####
-# calculate centroid of each plot
-s.center <- st_point_on_surface(shp.file)
-s.coord <- st_coordinates(s.center)
-
-# define neighbour as including all polygon centers within specific units rage
-
-s.dist  <-  dnearneigh(s.coord, 0, 0.00025) # chosen distance: 25 m (including west and east next GrownBlocks as neighbours)
-s.dist
-s.dist[22]
-
-# create list of neighbouring polygons
-lw <- nb2listw(s.dist, style="W", zero.policy = TRUE)
-lw
-
-## for biomass
-# run Monte Carlo simulation
-MI.bm  <-  moran.mc(shp.file$F21biomass, lw, nsim=999, zero.policy = TRUE) 
-MI.bm
-
-plot(MI.bm, xlab = "Moran's I") 
-
-## for species richness in 2021
-# run Monte Carlo simulation
-MI.snr  <-  moran.mc(shp.file$F21all_spe, lw, nsim=999, zero.policy = TRUE) 
-MI.snr
-
-plot(MI.snr, xlab = "Moran's I")
-
-## for species richness in 2024
-# run Monte Carlo simulation
-MI.snr24  <-  moran.mc(shp.file$F24all_spe, lw, nsim=999, zero.policy = TRUE) 
-MI.snr24
-
-plot(MI.snr24, xlab = "Moran's I")
