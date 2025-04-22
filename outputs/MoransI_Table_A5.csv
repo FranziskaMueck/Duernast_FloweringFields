@@ -1,0 +1,6 @@
+Moran's I MC approach as a function of contiguous neighbour results;;;;
+;;;;
+;number of simulations;statistic;observed rank;p-value
+biomass;999;0.23518;937;0.063
+total species richness 2021;999;0.0027036;547;0.453
+total species richness 2024;999;0.23276;942.5;0.0575
