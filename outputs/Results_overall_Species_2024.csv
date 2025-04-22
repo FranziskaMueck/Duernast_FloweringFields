@@ -1,7 +1,7 @@
 "ANOVA: glmmTMB(spec.nr.all~seed.density*seed.mixture+(1|replication)+(1|DensityBlock)+(1|blockgrowntogether), family = poisson(link = ""log""), data = aby24)";;;;;;;;;;;;;;;;;
 ;Chisq;Df;Pr(>Chisq);;;;;;;;;;;;;;
 seed.density;0.2262;2;0.893100;;;;;;;;;;;;;;
-seed.mixture;38.9785;4;0.000000;***;;;;;;;;;;;;;
+seed.mixture;38.9785;4;0.00000007038;***;;;;;;;;;;;;;
 seed.density:seed.mixture;3.897;8;0.866300;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;
