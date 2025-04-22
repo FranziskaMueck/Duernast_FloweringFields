@@ -1,0 +1,25 @@
+"ANOVA: glmmTMB(nb_grasses~seed.density*seed.mixture+(1|replication)+(1|DensityBlock)+(1|blockgrowntogether), family = poisson(link = ""log""), data = aby24)";;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;
+;Chisq;Df;Pr(>Chisq);;;;;;;;;;;;;;
+seed.density;0.893;2;0.63986;;;;;;;;;;;;;;
+seed.mixture;12.87;4;0.01193;*;;;;;;;;;;;;;
+seed.density:seed.mixture;3.7917;8;0.87541;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;
+seed mixture;;;;;;;;Seed densities within seed mixtures;;;;;;;;;
+;;;;;;;;;;;;;;;;;
+contrast;estimate;SE;df;z.ratio;p.value;;;seed.mixture;contrast;ratio;SE;df;asymp.LCL;asymp.UCL;null;z.ratio;p.value
+L.nr - M.nr;-1.14E+00;0.426;Inf;-2.675;0.0576;;;L.nr;seed.density1 / seed.density2;1;1;Inf;0.0535;18.69;1;0;1
+L.nr - M.r;-5.53E-01;0.469;Inf;-1.18;0.7631;;;L.nr;seed.density1 / seed.density3;0.5;0.433;Inf;0.0396;6.31;1;-0.8;0.9997
+L.nr - I.nr;-9.00E-07;0.527;Inf;0;1;;;L.nr;seed.density2 / seed.density3;0.5;0.433;Inf;0.0396;6.31;1;-0.8;0.9997
+L.nr - H.r;-3.93E-02;0.518;Inf;-0.076;1;;;M.nr;seed.density1 / seed.density2;1.43;0.704;Inf;0.3375;6.05;1;0.724;0.9999
+M.nr - M.r;5.88E-01;0.351;Inf;1.672;0.4511;;;M.nr;seed.density1 / seed.density3;1.43;0.704;Inf;0.3375;6.05;1;0.724;0.9999
+M.nr - I.nr;1.14E+00;0.426;Inf;2.675;0.0576;;;M.nr;seed.density2 / seed.density3;1;0.535;Inf;0.2091;4.78;1;0;1
+M.nr - H.r;1.10E+00;0.415;Inf;2.652;0.0614;;;M.r;seed.density1 / seed.density2;1.75;1.097;Inf;0.2793;10.97;1;0.893;0.9991
+M.r - I.nr;5.53E-01;0.469;Inf;1.18;0.7631;;;M.r;seed.density1 / seed.density3;2.33;1.61;Inf;0.3094;17.6;1;1.228;0.9757
+M.r - H.r;5.13E-01;0.459;Inf;1.12;0.7962;;;M.r;seed.density2 / seed.density3;1.33;1.018;Inf;0.1425;12.48;1;0.377;1
+I.nr - H.r;-3.93E-02;0.518;Inf;-0.076;1;;;I.nr;seed.density1 / seed.density2;0.5;0.433;Inf;0.0396;6.31;1;-0.8;0.9997
+;;;;;;;;I.nr;seed.density1 / seed.density3;1;1;Inf;0.0535;18.69;1;0;1
+;;;;;;;;I.nr;seed.density2 / seed.density3;2;1.732;Inf;0.1584;25.25;1;0.8;0.9997
+;;;;;;;;H.r;seed.density1 / seed.density2;1;0.816;Inf;0.0916;10.92;1;0;1
+;;;;;;;;H.r;seed.density1 / seed.density3;1.5;1.369;Inf;0.1036;21.72;1;0.444;1
+;;;;;;;;H.r;seed.density2 / seed.density3;1.5;1.369;Inf;0.1036;21.72;1;0.444;1
