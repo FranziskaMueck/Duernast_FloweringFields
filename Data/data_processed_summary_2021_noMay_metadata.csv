@@ -1,0 +1,9 @@
+variable;definition;unit;type;levels;comment
+seed_mixture;abbrevation of sown seed mixture;NA;character;L.nr=low diversity, non regional seeds/ M.nr=moderate diversity, non regional seeds/ M.r=moderate diversity, regional seeds/ I.nr=interemediate diversity, non regional seeds/ H.r=hig diversity, regional seeds;
+sown;total number of sown species per seed mixture;NA;numeric;;established and not established species from seed mixtures
+all;total number of species per seed mixture;NA;numeric;;sown and unsown species
+estab;total number sown and established species per seed mixture;NA;numeric;;
+not_estab;total number of sown but not established species per seed mixture;NA;numeric;;
+weed;total number of unsown species per seed mixture;NA;numeric;;
+% estab;ratio of sown and establish species over all observed species;%;numeric;;
+per_weed;ratio of unsown species over all observed species;%;numeric;;
